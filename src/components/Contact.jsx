@@ -19,6 +19,10 @@ export default function Contact(){
           <img src="/icons/google.png" alt="" className="h-12" />
           <img src="/icons/ristek.png" alt="" className="h-28" />
         </div>
+        <div className="space-y-5">
+          <img src="/icons/logo.png" alt="" className="w-44" />
+          <p>AI Based Analysis and Recommendations Consultant for New UMKM Cafes</p>
+        </div>
       </section>
     </>
   )
