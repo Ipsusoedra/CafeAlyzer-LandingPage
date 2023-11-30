@@ -1,13 +1,12 @@
 import { useState } from "react"
 import Hero from "./components/Hero"
 import Features from "./components/Features"
-import Team from "./components/Team"
 import Contact from "./components/Contact"
 import { Transition } from "@headlessui/react"
+import Team from "./components/Team"
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  console.log(isMenuOpen);
 
   return (
     <>
@@ -28,7 +27,7 @@ function App() {
                 leaveFrom="rotate-0 opacity-100"
                 leaveTo="rotate-90 opacity-0"
               >
-                <button className="flex items-center justify-center p-1" onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}>
+                <button className="items-center justify-center p-1" onClick={() => setIsMenuOpen((isMenuOpen) => !isMenuOpen)}>
                   <img src="/icons/cross.png" alt="cross" className="w-9" />
                 </button>
               </Transition>
@@ -44,7 +43,7 @@ function App() {
           </div>
           {/* End::Menu Mobile */}
           <div className="hidden md:flex lg:flex items-center gap-14 ">
-            <a href="#home">Home</a>
+            <a href="#hero">Home</a>
             <a href="#features">Features</a>
             <a href="#team">Team</a>
             <a href="#contact">Contact</a>
@@ -60,7 +59,7 @@ function App() {
           leaveTo="-translate-x-full"
         >
           <div className="transition flex flex-col gap-5 w-fit">
-            <a href="#home">Home</a>
+            <a href="#hero">Home</a>
             <a href="#features">Features</a>
             <a href="#team">Team</a>
             <a href="#contact">Contact</a>
@@ -70,7 +69,7 @@ function App() {
       <main className="md:px-28 lg:px-28">
         <Hero />
         <Features />
-        <Team />
+        <Team/>
         <Contact />
       </main>
       <footer>

@@ -1,8 +1,8 @@
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-5 px-6 py-10 md:my-28 lg:my-28">
-        <div className="flex flex-col gap-10 lg:w-4/12 md:gap-16 lg:gap-16">
+      <div id="hero" className="flex flex-col lg:flex-row gap-5 px-10 py-10 my-28 md:my-28 lg:my-28">
+        <div className="flex flex-col gap-14 lg:w-4/12 md:gap-16 lg:gap-16">
           <h1 className="font-bold text-5xl text-center lg:text-left">Compare Your Business</h1>
           <p className="text-center lg:text-left lg:leading-loose">CafeAlyzer revolutionizes the coffee industry by offering analysis and recommendations. Leveraging artificial intelligence, the app assists new SME cafe owners in making strategic decisions, providing insights into market trends.</p>
           <div className="flex justify-center items-center lg:items-start lg:justify-start">

@@ -1,7 +1,7 @@
 export default function Contact(){
   return (
     <>
-      <section className="px-6 py-10 flex flex-col gap-10 md:mt-24 lg:mt-24 md:flex-row lg:flex-row md:justify-between lg:justify-between">
+      <section id="contact" className="px-6 py-10 flex flex-col gap-10 md:flex-row lg:flex-row md:justify-between lg:justify-between">
         <div className="flex flex-col gap-5 items-start md:w-4/12 lg:w-4/12">
           <h3 className="font-semibold text-xl">Contact</h3>
           <div className="flex items-center gap-2 ">
@@ -13,7 +13,7 @@ export default function Contact(){
             <p>cafealyzer@gmail.com</p>
           </div>
         </div>
-        <div className="md:w-4/12 lg:w-4/12">
+        <div className="md:w-4/12 lg:w-4/12 space-y-5">
           <h3 className="font-semibold text-xl">Supported By</h3>
           <img src="/icons/bangkit.png" alt="" className="h-28" />
           <img src="/icons/google.png" alt="" className="h-12" />

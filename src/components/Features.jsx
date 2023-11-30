@@ -1,8 +1,8 @@
 export default function Features(){
   return (
     <>
-      <div className="px-6 py-10 flex flex-col gap-10 lg:gap-24 lg:my-28">
-        <header className="flex flex-col gap-5 items-center">
+      <div id="features" className="px-10 py-10 flex flex-col gap-14 lg:gap-24 lg:my-28">
+        <header className="flex flex-col gap-10 items-center">
           <h1 className="font-bold text-5xl">Features</h1>
           <p className="text-center md:w-96 lg:w-96">We dream of advancing the welfare of local SMEs, and here are some features we offer at CafeAlyzer</p>
         </header>
