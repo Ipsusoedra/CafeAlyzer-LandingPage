@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 
 const peoples = [
   {
@@ -38,7 +38,7 @@ const peoples = [
   },
 ]
 
-export default function Team() {
+const Team = forwardRef((props, ref) => {
   let [current, setCurrent] = useState(0);
 
   let prev = () => {
@@ -56,12 +56,12 @@ export default function Team() {
       next();
     }, 2000);
 
-    return () => clearInterval(interval); // Membersihkan interval saat komponen tidak lagi digunakan
-  }, [current]); // Efek hanya dijalankan ketika nilai current berubah
+    return () => clearInterval(interval);
+  }, [current]);
 
   return (
     <>
-      <div id="team" className="relative flex flex-col gap-12 my-24 md:my-52 lg:my-52">
+      <div ref={ref} className="relative flex flex-col gap-12 my-24 md:my-44 lg:my-44">
         <h1 className="font-bold text-5xl text-center">Let's Meet Our Team</h1>
         <div className='px-24 '>
           <section className={`pt-24 relative flex overflow-x-hidden gap-20`}
@@ -92,4 +92,8 @@ export default function Team() {
       </div>
     </>
   )
-}
+})
+
+Team.displayName = 'Team';
+
+export default Team;

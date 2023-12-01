@@ -1,7 +1,9 @@
-export default function Contact(){
+import { forwardRef } from "react";
+
+const Contact = forwardRef((props, ref) => {
   return (
     <>
-      <section id="contact" className="px-6 py-10 flex flex-col gap-10 md:flex-row lg:flex-row md:justify-between lg:justify-between">
+      <section ref={ref} className="px-6 py-10 flex flex-col gap-10 md:flex-row lg:flex-row md:justify-between lg:justify-between">
         <div className="flex flex-col gap-5 items-start md:w-4/12 lg:w-4/12">
           <h3 className="font-semibold text-xl">Contact</h3>
           <div className="flex items-center gap-2 ">
@@ -26,4 +28,8 @@ export default function Contact(){
       </section>
     </>
   )
-}
+})
+
+Contact.displayName = 'Contact';
+
+export default Contact;
