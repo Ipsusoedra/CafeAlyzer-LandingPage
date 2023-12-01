@@ -33,7 +33,7 @@ const peoples = [
   },
   {
     'name': 'Elfira Ratna Syaharani',
-    'image': '/assets/people2.png',
+    'image': '/assets/elfira.png',
     'role': 'Maching Learning'
   },
 ]
@@ -59,17 +59,19 @@ const Team = forwardRef((props, ref) => {
     return () => clearInterval(interval);
   }, [current]);
 
+  console.log(current);
+
   return (
     <>
       <div ref={ref} className="relative flex flex-col gap-12 my-24 md:my-44 lg:my-44">
         <h1 className="font-bold text-5xl text-center">Let's Meet Our Team</h1>
         <div className='px-24 flex justify-center '>
-          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20`}
+          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20 snap-x`}
           >
             {peoples.map((people, index) => (
-              <div key={index} className={`flex flex-col gap-5 min-w-fit transition ease-out duration-500`}
+              <div key={index} className={`snap-center flex flex-col gap-5 min-w-fit transition ease-out duration-500`}
                 style={{
-                  transform: `translateX(-${current * 85}%)`,
+                  transform: `translateX(-${current * 100}%)`,
                 }}
               >
                 <div className="relative flex flex-col items-center bg-secondary h-60 w-72 rounded-xl">
