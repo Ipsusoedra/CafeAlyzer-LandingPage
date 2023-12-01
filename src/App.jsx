@@ -74,10 +74,10 @@ function App() {
           leaveTo="-translate-x-full"
         >
           <div className="transition flex flex-col gap-5 w-fit">
-            <a href="#hero">Home</a>
-            <a href="#features">Features</a>
-            <a href="#team">Team</a>
-            <a href="#contact">Contact</a>
+            <a onClick={() => handleLinkClick(heroRef)} href="#hero">Home</a>
+            <a onClick={() => handleLinkClick(featuresRef)} href="#features">Features</a>
+            <a onClick={() => handleLinkClick(teamRef)} href="#team">Team</a>
+            <a onClick={() => handleLinkClick(contactRef)} href="#contact">Contact</a>
           </div>
         </Transition>
       </nav>

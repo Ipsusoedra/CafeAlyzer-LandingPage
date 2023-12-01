@@ -8,7 +8,7 @@ const peoples = [
   },
   {
     'name': 'Vincent Khenndy',
-    'image': '/assets/people1.png',
+    'image': '/assets/vincent.png',
     'role': 'Mobile Developer'
   },
   {
@@ -28,12 +28,12 @@ const peoples = [
   },
   {
     'name': 'Hajjar Ayu Cahyani K',
-    'image': '/assets/people2.png',
+    'image': '/assets/ayu.png',
     'role': 'Machine Learning'
   },
   {
     'name': 'Elfira Ratna Syaharani',
-    'image': '/assets/people3.png',
+    'image': '/assets/people2.png',
     'role': 'Maching Learning'
   },
 ]
@@ -63,8 +63,8 @@ const Team = forwardRef((props, ref) => {
     <>
       <div ref={ref} className="relative flex flex-col gap-12 my-24 md:my-44 lg:my-44">
         <h1 className="font-bold text-5xl text-center">Let's Meet Our Team</h1>
-        <div className='px-24 '>
-          <section className={`pt-24 relative flex overflow-x-hidden gap-20`}
+        <div className='px-24 flex justify-center '>
+          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20`}
           >
             {peoples.map((people, index) => (
               <div key={index} className={`flex flex-col gap-5 min-w-fit transition ease-out duration-500`}
@@ -73,7 +73,7 @@ const Team = forwardRef((props, ref) => {
                 }}
               >
                 <div className="relative flex flex-col items-center bg-secondary h-60 w-72 rounded-xl">
-                  <img src={people.image} alt="" className="h-80 absolute -top-20   " />
+                  <img src={people.image} alt="" className="h-80 absolute -top-20" />
                 </div>
                 <div className="flex flex-col gap-5">
                   <h3 className="font-semibold text-xl">{people.name}</h3>
