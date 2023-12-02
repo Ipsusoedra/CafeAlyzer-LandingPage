@@ -2,8 +2,17 @@
 
 ## How to use
 ```
-yarn install
+git clone https://github.com/Ipsusoedra/CafeAlyzer-LandingPage.git
 ```
 ```
-yarn dev
+cd CafeAlyzer-LandingPage
+```
+```
+npm install pnpm
+```
+```
+npm install pnpm
+```
+```
+pnpm run dev
 ```
