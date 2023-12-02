@@ -11,8 +11,5 @@ cd CafeAlyzer-LandingPage
 npm install pnpm
 ```
 ```
-npm install pnpm
-```
-```
 pnpm run dev
 ```
