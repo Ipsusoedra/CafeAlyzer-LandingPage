@@ -8,11 +8,11 @@ const Contact = forwardRef((props, ref) => {
           <h3 className="font-semibold text-xl">Contact</h3>
           <div className="flex items-center gap-2 ">
             <img src="/icons/instagram.png" alt="instagram icon" className="h-8 w-8" />
-            <p>cafealyzer</p>
+            <p className="md:text-xs">cafealyzer</p>
           </div>
           <div className="flex items-center gap-3  px-1">
             <img src="/icons/email.png" alt="whatsapp icon" className="h-6 w-6" />
-            <p>cafealyzer@gmail.com</p>
+            <p className="md:text-xs">cafealyzer@gmail.com</p>
           </div>
         </div>
         <div className="md:w-4/12 lg:w-4/12 space-y-5" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
@@ -23,7 +23,7 @@ const Contact = forwardRef((props, ref) => {
         </div>
         <div className="space-y-5 md:w-4/12 lg:w-4/12" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="3000">
           <img src="/icons/logo.png" alt="" className="w-44" />
-          <p>AI Based Analysis and Recommendations Consultant for New UMKM Cafes</p>
+          <p className="md:text-xs">AI Based Analysis and Recommendations Consultant for New UMKM Cafes</p>
         </div>
       </section>
     </>

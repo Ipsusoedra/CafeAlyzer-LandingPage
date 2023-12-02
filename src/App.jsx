@@ -60,17 +60,18 @@ function App() {
             )}
           </div>
           {/* End::Menu Mobile */}
-          <div className="hidden md:flex lg:flex items-center gap-14 ">
-            <a onClick={() => handleLinkClick(heroRef)} href="#hero">
+
+          <div id="navbar" className="hidden md:flex lg:flex items-center gap-14 ">
+            <a className="nav-list " onClick={() => handleLinkClick(heroRef)} href="#hero">
               Home
             </a>
-            <a onClick={() => handleLinkClick(featuresRef)} href="#features">
+            <a className="nav-list" onClick={() => handleLinkClick(featuresRef)} href="#features">
               Features
             </a>
-            <a onClick={() => handleLinkClick(teamRef)} href="#team">
+            <a className="nav-list" onClick={() => handleLinkClick(teamRef)} href="#team">
               Team
             </a>
-            <a onClick={() => handleLinkClick(contactRef)} href="#contact">
+            <a className="nav-list" onClick={() => handleLinkClick(contactRef)} href="#contact">
               Contact
             </a>
           </div>
@@ -107,7 +108,7 @@ function App() {
         <Contact ref={contactRef} />
       </main>
       <footer>
-        <p className="text-center border-t py-5">Copyright 2023 All Rights Reserved By: CafeAlyzer</p>
+        <p className="text-center border-t py-5 xs:text-sm sm:text-sm md:text-md xl:text-md">Copyright 2023 All Rights Reserved By: CafeAlyzer</p>
       </footer>
     </>
   );

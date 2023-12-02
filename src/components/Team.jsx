@@ -1,5 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef } from "react";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Autoplay, Navigation } from "swiper/modules";
 
 const peoples = [
   {
@@ -8,7 +16,7 @@ const peoples = [
     role: "Mobile Developer",
   },
   {
-    name: "Vincent Khenndy",
+    name: "Vincentius Kennedy W",
     image: "/assets/vincent.png",
     role: "Mobile Developer",
   },
@@ -40,55 +48,58 @@ const peoples = [
 ];
 
 const Team = forwardRef((props, ref) => {
-  let [current, setCurrent] = useState(0);
-
-  let prev = () => {
-    if (current === 0) setCurrent(peoples.length - 1);
-    else setCurrent(current - 1);
-  };
-
-  let next = () => {
-    if (current === peoples.length - 1) setCurrent(0);
-    else setCurrent(current + 1);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      next();
-    }, 2000);
-
-    return () => clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current]);
-
-  console.log(current);
-
   return (
     <>
       <div ref={ref} className="relative flex flex-col gap-12 my-24 md:my-44 lg:my-44">
-        <h1 className="font-bold text-5xl text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+        <h1 className="font-bold text-5xl text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">
           Let's Meet Our Team
         </h1>
-        <div className="px-24 flex justify-center ">
-          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20 snap-x`} data-aos="fade-up" data-aos-duration="3000">
+        <div className="relative flex justify-center ">
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={4}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              400: {
+                slidesPerView: 1,
+              },
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              1280: {
+                slidesPerView: 4,
+              },
+            }}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            navigation={true}
+            modules={[Autoplay, Navigation]}
+            className={`mySwiper snap-center pt-24 2xs:pl-20 xs:pl-32 sm:pl-40 md:pl-5  lg:pl-20 xl:pl-20  flex justify-center`}
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             {peoples.map((people, index) => (
-              <div key={index} className={`snap-center flex flex-col gap-5 min-w-fit transition ease-out duration-500`} style={{ transform: `translateX(-${(current - 3) * 100}%)` }}>
-                <div className="relative flex flex-col items-center bg-secondary h-60 w-72 rounded-xl">
-                  <img src={people.image} alt="" className="h-80 absolute -top-20" />
+              <SwiperSlide key={index} className={`snap-center flex flex-col min-w-fit transition ease-out duration-500`}>
+                <div className="relative flex flex-col items-center bg-secondary 2xs:h-52 2xs:w-60 xs:h-52 xs:w-60 sm:h-60 sm:w-72  md:h-48 md:w-56 lg:h-32 lg:w-36 xl:h-32 xl:w-40 rounded-xl">
+                  <img src={people.image} alt="" className="2xs:h-72 xs:h-72 sm:h-64 sm:h-80 md:h-64 lg:h-48  xl:h-52  absolute -top-20 object-cover" />
                 </div>
                 <div className="flex flex-col gap-5">
-                  <h3 className="font-semibold text-xl">{people.name}</h3>
-                  <p>{people.role}</p>
+                  <h3 className="font-semibold xs:text-sm sm:text-sm md:text-md lg:text-md xl:text-md">{people.name}</h3>
+                  <p className="xs:text-sm sm:text-sm md:text-md xl:text-md">{people.role}</p>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </section>
-        </div>
-        <div onClick={prev} className="absolute  top-[50%] left-5 translate-x-0 hover:-translate-x-3 duration-200 hover:cursor-pointer">
-          <img src="/icons/prev.png" alt="" className="w-12" />
-        </div>
-        <div onClick={next} className="absolute  top-[50%] right-5 translate-x-0 hover:translate-x-3 duration-200 hover:cursor-pointer">
-          <img src="/icons/next.png" alt="" className="w-12" />
+          </Swiper>
         </div>
       </div>
     </>
