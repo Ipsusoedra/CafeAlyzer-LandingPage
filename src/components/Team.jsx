@@ -66,9 +66,11 @@ const Team = forwardRef((props, ref) => {
   return (
     <>
       <div ref={ref} className="relative flex flex-col gap-12 my-24 md:my-44 lg:my-44">
-        <h1 className="font-bold text-5xl text-center">Let's Meet Our Team</h1>
+        <h1 className="font-bold text-5xl text-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+          Let's Meet Our Team
+        </h1>
         <div className="px-24 flex justify-center ">
-          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20 snap-x`}>
+          <section className={`pt-24 relative flex pl-10 overflow-x-hidden gap-20 snap-x`} data-aos="fade-up" data-aos-duration="3000">
             {peoples.map((people, index) => (
               <div key={index} className={`snap-center flex flex-col gap-5 min-w-fit transition ease-out duration-500`} style={{ transform: `translateX(-${(current - 3) * 100}%)` }}>
                 <div className="relative flex flex-col items-center bg-secondary h-60 w-72 rounded-xl">
