@@ -1,25 +1,28 @@
-import { useState, useRef } from "react"
-import Hero from "./components/Hero"
-import Features from "./components/Features"
-import Contact from "./components/Contact"
-import { Transition } from "@headlessui/react"
-import Team from "./components/Team"
+import { useState, useRef } from "react";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Contact from "./components/Contact";
+import { Transition } from "@headlessui/react";
+import Team from "./components/Team";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
-  const heroRef = useRef(null)
-  const featuresRef = useRef(null)
-  const teamRef = useRef(null)
-  const contactRef = useRef(null)
+  const heroRef = useRef(null);
+  const featuresRef = useRef(null);
+  const teamRef = useRef(null);
+  const contactRef = useRef(null);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = (ref) => {
-    console.log('clicked');
+    console.log("clicked");
     const offset = ref.current.offsetTop - window.innerHeight / 4;
 
     window.scrollTo({
       top: offset,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -58,10 +61,18 @@ function App() {
           </div>
           {/* End::Menu Mobile */}
           <div className="hidden md:flex lg:flex items-center gap-14 ">
-            <a onClick={() => handleLinkClick(heroRef)} href="#hero">Home</a>
-            <a onClick={() => handleLinkClick(featuresRef)} href="#features">Features</a>
-            <a onClick={() => handleLinkClick(teamRef)} href="#team">Team</a>
-            <a onClick={() => handleLinkClick(contactRef)} href="#contact">Contact</a>
+            <a onClick={() => handleLinkClick(heroRef)} href="#hero">
+              Home
+            </a>
+            <a onClick={() => handleLinkClick(featuresRef)} href="#features">
+              Features
+            </a>
+            <a onClick={() => handleLinkClick(teamRef)} href="#team">
+              Team
+            </a>
+            <a onClick={() => handleLinkClick(contactRef)} href="#contact">
+              Contact
+            </a>
           </div>
         </div>
         <Transition
@@ -74,24 +85,33 @@ function App() {
           leaveTo="-translate-x-full"
         >
           <div className="transition flex flex-col gap-5 w-fit">
-            <a onClick={() => handleLinkClick(heroRef)} href="#hero">Home</a>
-            <a onClick={() => handleLinkClick(featuresRef)} href="#features">Features</a>
-            <a onClick={() => handleLinkClick(teamRef)} href="#team">Team</a>
-            <a onClick={() => handleLinkClick(contactRef)} href="#contact">Contact</a>
+            <a onClick={() => handleLinkClick(heroRef)} href="#hero">
+              Home
+            </a>
+            <a onClick={() => handleLinkClick(featuresRef)} href="#features">
+              Features
+            </a>
+            <a onClick={() => handleLinkClick(teamRef)} href="#team">
+              Team
+            </a>
+            <a onClick={() => handleLinkClick(contactRef)} href="#contact">
+              Contact
+            </a>
           </div>
         </Transition>
       </nav>
       <main className="md:px-28 lg:px-28">
-        <Hero ref={heroRef}/>
-        <Features ref={featuresRef}/>
-        <Team ref={teamRef}/>
-        <Contact ref={contactRef}/>
+        <Hero ref={heroRef} />
+        <Features ref={featuresRef} />
+        <Team ref={teamRef} />
+        <Contact ref={contactRef} />
       </main>
       <footer>
         <p className="text-center border-t py-5">Copyright 2023 All Rights Reserved By: CafeAlyzer</p>
       </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+AOS.init();
